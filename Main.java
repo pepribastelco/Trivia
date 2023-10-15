@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -42,7 +43,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         while (numPregunta<=10) //Fem un while de 10 per fer 10 preguntes
         {
-             //pensem un numero aleatori de 0 al numero de preguntes menys 1
+            //pensem un numero aleatori de 0 al numero de preguntes menys 1
             int IndexRand = GetIndexRandPregunta(preguntes);
             String pregunta= preguntes.get(IndexRand);
             System.out.println("Pregunta "+numPregunta+":"); //Imprimim la pregunta corresponent al numero
@@ -58,7 +59,7 @@ public class Main {
             }
             numPregunta++;
             try {
-                Thread.sleep(2000); // Pausa de 2 segons (2000 mil·lisegons)
+                Thread.sleep(1000); // Pausa de 2 segons (2000 mil·lisegons)
             } catch (InterruptedException e) {
                 System.out.println("S'ha produït un error durant la pausa.");
             }
@@ -87,8 +88,10 @@ public class Main {
                 lineas.add(linea);
             }
             br.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        }
+        catch (IOException e) {
+            //e.printStackTrace();
+            System.err.println("Error al leer el archivo: " + e.getMessage());
+            System. exit(0);
         }
     }
-}
