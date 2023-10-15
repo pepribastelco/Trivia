@@ -1,22 +1,25 @@
-TRIVIA
-Autor JOSEP RIBAS VILALTA si3091  15/10/2023
-Memoria:
+Memoria:	TRIVIA 
+Assignatura: Programació_POO_I3_M3_G_2324
+https://github.com/pepribastelco/Trivia
+Autor: JOSEP RIBAS VILALTA 
+Data entrega: 15/10/2023
+
 
 Requeriments
 
 Es demana fer una programa que faci deu preguntes a l’usuari i puntuï les correctes.
-Les preguntes estarán en un fitxer txt i les respostes en un altre fitxer.
+Les preguntes estaran en un fitxer txt separades en línies i les respostes en un altre fitxer txt tb separades en línies.
 
 
-Procediment
+Procediment i ordre del programa
 
-Llegim el fitxer preguntes i el posem en un array d’strings (preguntes)
-Llegin fitxer respostes i el posem en un array d’strings (respostes)
-Calculem un numero aleatori de 0 a numero de preguntes-1 (IndexRand)
-El numero aleatori será el numero de la pregunta a fer.
+Llegim el fitxer preguntes.txt i el posem en l’array d’strings preguntes.
+Llegim el fitxer respostes.txt i el posem en l’array d’strings respostes.
+Calculem un número aleatori de 0 a numero de preguntes-1 (IndexRand)
+El numero aleatori serà el numero de la pregunta a fer.
 Fem pregunta i esperem resposta. La resposta por ser més d’una paraula.
-Comparem resposta de l’usuari amb la resposta correcte.
-Si l’ha encertat incrementem contador d’encerts, sino no l’incrementem.
+Comparem resposta de l’usuari amb la resposta correcte de l’array respostes.
+Si l’ha encertat incrementem comptador d’encerts, sinó no l’incrementem.
 Fem la següent pregunta fins a 10 preguntes.
 Preguntem si volem tornar a jugar.
 
@@ -48,21 +51,25 @@ System.out.println(pregunta+  " ("+ANSI_GREY+respostaCorrecte+ANSI_RESET+")");
 Imprimim la pregunta seguida de la resposta correcte en gris entre parentessis
 
 sleep
-Thread.sleep(2000);
-Fem una pausa de 2 segons abans de fer la següent pregunta
+Thread.sleep(1000);
+Fem una pausa de 1 segon abans de fer la següent pregunta. 
 
 equalsIgnoreCase
 Preguntem si volen tornar a jugar escanejanet S o N. Sino entra cap del valor avisem d’entrada de valor incorrecte i tornem a preguntar.
 while ((!(answer.equalsIgnoreCase("S"))) && (!(answer.equalsIgnoreCase("N"))))
 Aquest while es compleix sempre que answer no si “S” ni “N” ( o ni “s” ni “n”)
 
+exit
+System. exit(0);
+Per finalizar el programa després d’un error greu.
+
 Extres:
 
+Si n’ha encertat menys de 5 donem ànims dient :
 Ànims, la propera jugada poder n'encertes més!
-Si n’ha encertat menys de 5 donem ànims dient : 
 
+Si n’ha encertat més de 7 felicitem dient:
 Bona Feina!
-Si n’ha encertat més de 7 felicitem diente:
 
 
 
@@ -75,7 +82,7 @@ File és un string amb el nom del fitxer. “preguntas.txt” o “respuestas.tx
 
 private static int GetIndexRandPregunta(ArrayList<String> llistaLinies)
 
-Mesura la quantitat de d’String de l’ArrayList llistaLinies i retorna un inter de valor de 0 a quantitat-1.
+Mesura la quantitat  d’String de l’ArrayList llistaLinies i retorna un enter de valor de 0 a quantitat-1.
 
 private static void Play(ArrayList<String> preguntes, ArrayList<String> respostes)
 
